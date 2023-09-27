@@ -15,6 +15,8 @@
     "@mui/material": "^5.14.10",
     "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-query": "^4.35.3",
+    "@types/redux-logger": "^3.0.9",
+    "get-starknet": "^3.0.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
@@ -22,7 +24,7 @@
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.16.0",
     "sort-by": "^1.2.0",
-    "starknet": "^5.19.5"
+    "starknet": "^5.20.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

@@ -1,7 +1,12 @@
 import {Settings} from "../types/settings";
+import {ThemeVariants} from "../style/theme";
+import {NetworkName} from "../types/network";
 const SETTINGS_KEY = "app-settings";
 const DEFAULT_SETTINGS:Settings={
     autoconnect:true,
+    theme:ThemeVariants.dark,
+    slippage:5,
+    network:NetworkName.Mainnet
 }
 export const validateSettings=(v:unknown):v is Settings=>{
     return true;

@@ -1,7 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {retriveSettings, storeSettings} from "../../utils/settings";
 import {Settings} from "../../types/settings";
-import {act} from "react-dom/test-utils";
 
 export const settings = createSlice({
     name:"settings",
@@ -12,11 +11,11 @@ export const settings = createSlice({
             storeSettings(state);
             return state;
         },
-        setSlippageState:(state,action:{payload:number})=>{
+        setSlippageState: (state, action: { payload: number }) => {
             state.slippage = action.payload;
             return state;
-        }
+        },
     }
 });
-export const {updateSettingState}=settings.actions;
+export const {updateSettingState,setSlippageState}=settings.actions;
 
