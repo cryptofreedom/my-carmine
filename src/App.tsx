@@ -15,14 +15,16 @@ function App() {
         <Provider store={store}>
             <Controller>
                 <CssBaseline/>
-                {acceptedTermsAndConditions?(<>
+                {acceptedTermsAndConditions?(
+                    <>
                     <Router>
                         <Routes>
                             <Route path={"/"} element={<TradePage/>}/>
                             <Route path={"/trade"} element={<TradePage/>}/>
                         </Routes>
                     </Router>
-                </>):(
+                </>
+                ):(
                     <TermsAndConditions check={check} rerender={rerender}/>
                 )
                 }

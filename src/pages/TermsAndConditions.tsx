@@ -5,7 +5,7 @@ import {Box, Button, Link, Typography, useTheme} from "@mui/material";
 const HIDE_TIME_MS=12*60*60*1000;
 
 const storeTermsAndConditions=(check:boolean,rerender:(b:boolean)=>void)=>{
-    setCookieWithExpiry("carmine-t&c","accepted",HIDE_TIME_MS);
+    setCookieWithExpiry("carmine_t&c","accepted",HIDE_TIME_MS);
     rerender(!check);
 }
 type Props = {

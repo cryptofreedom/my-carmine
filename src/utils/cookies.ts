@@ -1,5 +1,5 @@
 export const isCookieSet = (cookieName:string):boolean=>{
-    document.cookie.split(";").some((c)=>{c.includes(`${cookieName}=`)});
+    return document.cookie.split(";").some((c)=>{return c.includes(`${cookieName}=`)});
 }
 
 export const setCookieWithExpiry=(
