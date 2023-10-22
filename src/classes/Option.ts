@@ -7,3 +7,7 @@ raw:RawOptionBase
     |{
     parsed:ParsedOptionBase
 }
+
+export class Option {
+
+}
