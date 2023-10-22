@@ -9,8 +9,10 @@ import {TradePage} from "./pages/trade";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {TermsAndConditions} from "./pages/TermsAndConditions";
 function App() {
+    console.log("s1111")
     const [check,rerender] = useState(false);
     const acceptedTermsAndConditions = isCookieSet("carmine_t&c");
+
     return (
         <Provider store={store}>
             <Controller>
