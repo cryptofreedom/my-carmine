@@ -1,15 +1,9 @@
 import BN from "bn.js";
-export type Uint256LeadingNumber = string;
-export type Uint256TailZero = string;
-export type Int = string;
-export type Math64x61 = string;
-export type Address = string;
-export type Hex = string;
-export type Decimal = number;
-
-export type IntBN = BN;
-export type Math64x61BN = BN;
-export type Uint256BN = BN;
-export type OptionSideBN = BN;
-export type OptionTypeBN = BN;
-export type AddressBN = BN;
+import {Decimal, Math64x61} from "../types/units";
+import {BASE_MATH_64_61} from "../constants/amm";
+const PERCISSION_DIGITS=20;
+const PERCISSION_BASE_VALUE=new BN(10).pow(new BN(PERCISSION_DIGITS));
+export const math64x61toDecimal=(n:Math64x61):Decimal=>{
+    const long = new BN(n).mul(PERCISSION_BASE_VALUE).div(BASE_MATH_64_61).toString(10);
+    return
+}

@@ -1,6 +1,7 @@
 import {AddressBN, Decimal, Hex, Int, IntBN, Math64x61, OptionSideBN} from "../utils/units";
 import BN from "bn.js";
 import {uint256} from "starknet";
+import {ParsedPool} from "./pool";
 
 export enum OptionType {
     Call = "0",
@@ -51,3 +52,4 @@ export interface RawPoolInfo extends RawPool{
     unlocked_capital:uint256.Uint256;
     value_of_pool_position:Math64x61;
 }
+

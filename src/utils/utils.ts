@@ -13,6 +13,7 @@ export const isLong=(side:OptionSide):boolean=>side===OptionSide.Long;
 
 export const toHex = (v:BN)=>"0x"+v.toString(16);
 
+export const hexToBN = (v:string):BN =>new BN(v.substring(2),"hex");
 export const standardiseAddress = (address:string):string=>{
     const withoutPrefix = address.replace(/^0x0*/g,"").toLowerCase();
     return "0x"+withoutPrefix;

@@ -1,9 +1,10 @@
 import {ParsedPool, RawPool} from "../types/pool";
-import {Token, TokenPair} from "../tokens/token";
+import {getTokenPairByAddresses, Token, TokenPair} from "../tokens/token";
 import {bnToOptionType} from "../utils/conversions";
-import {toHex} from "../utils/utils";
+import {hexToBN, toHex} from "../utils/utils";
 import {OptionType} from "../types/options";
 import {getMultipleTokensValueInUsd} from "../tokens/tokenPrices";
+import BN from "bn.js";
 
 type Props = |{raw:RawPool}|{parsed:ParsedPool}
 
@@ -17,7 +18,26 @@ export class Pool{
             this.raw = props.raw;
             this.parsed = this.parseFromRow(props.raw);
             this.id=this.generatedId();
+            this.tokenPair=getTokenPairByAddresses(this.parsed.baseToken,this.parsed.quoteToken);
+        }else if("parsed" in props){
+            this.parsed = props.parsed;
+            this.raw = this.rawFromParsed(props.parsed);
+            this.id = this.generatedId();
+            this.tokenPair = getTokenPairByAddresses(
+                this.parsed.baseToken,
+                this.parsed.quoteToken
+            )
+        }else{
+            throw Error(`Unexpected Pool props:${JSON.stringify(props)}`);
         }
+    }
+
+    rawFromParsed(parsed:ParsedPool):RawPool{
+        return {
+            quote_token_address:hexToBN(parsed.quoteToken),
+            base_token_address:hexToBN(parsed.baseToken),
+            option_type:new BN(parsed.optionType)
+        };
     }
 
     parseFromRow(raw:RawPool):ParsedPool{
