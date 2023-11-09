@@ -1,4 +1,4 @@
-import {AddressBN, Decimal, Hex, Int, IntBN, Math64x61, OptionSideBN} from "../utils/units";
+import {AddressBN, Decimal, Hex, Int, IntBN, Math64x61, OptionSideBN} from "../types/units";
 import BN from "bn.js";
 import {uint256} from "starknet";
 import {ParsedPool} from "./pool";

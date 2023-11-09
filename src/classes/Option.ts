@@ -1,8 +1,10 @@
 import {ParsedOptionBase, RawOptionBase} from "../types/options";
 import {Pool} from "./Pool";
 import {getTokenPairByAddresses, TokenPair} from "../tokens/token";
-import {bnToOptionSide} from "../utils/conversions";
+import {bnToOptionSide, bnToOptionType} from "../utils/conversions";
 import BN from "bn.js";
+import {math64x61toDecimal} from "../utils/units";
+import {toHex} from "../utils/utils";
 
 
 type Props =
@@ -34,9 +36,11 @@ export class Option extends Pool{
     parsedFromRaw(raw:RawOptionBase):ParsedOptionBase{
         return {
             optionSide:bnToOptionSide(raw.option_side),
-            optionType:bnToOptionSide(raw.option_type),
+            optionType:bnToOptionType(raw.option_type),
             maturity:new BN(raw.maturity).toNumber(),
-            strikePrice:ma
-        }
+            strikePrice:math64x61toDecimal(raw.strike_price.toString(10)),
+            quoteToken:toHex(raw.quote_token_address),
+            baseToken:toHex(raw.base_token_address),
+        };
     }
 }

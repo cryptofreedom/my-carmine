@@ -1,5 +1,5 @@
 import {OptionType} from "./options";
-import {AddressBN, Decimal, Int, Math64x61, Math64x61BN} from "../utils/units";
+import {AddressBN, Decimal, Int, Math64x61, Math64x61BN} from "../types/units";
 import BN from "bn.js";
 import {uint256} from "starknet";
 
