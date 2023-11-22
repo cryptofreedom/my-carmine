@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 import {RootState} from "./redux/store";
 import {connectToLatest} from "./network/account";
-import {getTheme} from "./style/theme";
+import {getTheme} from "./style/themes";
 import {ThemeProvider} from "@mui/material";
 type Props = {children:ReactNode};
 export const Controller = ({children}:Props)=>{

@@ -1,9 +1,12 @@
 import { ThemeVariants } from "../style/themes";
-import { NetworkName } from "./network";
+
+export const enum ProviderVariants {
+  Devnet,
+  Testnet,
+  Mainnet,
+}
 
 export interface Settings {
   autoconnect: boolean;
   theme: ThemeVariants;
-  network: NetworkName;
-  slippage: number;
 }

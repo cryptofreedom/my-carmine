@@ -1,20 +1,21 @@
-import {SupportedWalletIds} from "./wallet";
-import {constants, Provider} from "starknet";
+import { Provider } from "starknet";
+import { SupportedWalletIds } from "./wallet";
+import { constants } from "starknet";
 
 export enum NetworkName {
-    Testnet="Testnet",
-    Devnet="Devnet",
-    Mainnet="Mainnet",
-    Testdev="Testdev",
+  Testnet = "Testnet",
+  Devnet = "Devnet",
+  Mainnet = "Mainnet",
+  Testdev = "Testdev",
 }
 
-export interface Network{
-    name:NetworkName;
-    chainId:constants.StarknetChainId;
+export interface Network {
+  name: NetworkName;
+  chainId: constants.StarknetChainId;
 }
 
-export interface NetworkState{
-    walletId?:SupportedWalletIds;
-    provider:Provider;
-    network:Network
+export interface NetworkState {
+  walletId?: SupportedWalletIds;
+  provider: Provider;
+  network: Network;
 }

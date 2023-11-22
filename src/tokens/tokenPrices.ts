@@ -1,4 +1,4 @@
-import {TokenKey} from "./token";
+import {TokenKey} from "./tokens";
 type Coin = {
     id: TokenKey;
     current_price:number;
