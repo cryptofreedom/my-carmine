@@ -284,11 +284,11 @@ export class OptionWithPosition extends Option {
         return shortInteger(this.fullSize, this.tokenPair.base.decimals);
     }
 
-    get isInTheMoney(): Boolean {
+    get isInTheMoney(): boolean {
         return !!this.parsed.positionValue && this.isExpired;
     }
 
-    get isOutOfTheMoney(): Boolean {
+    get isOutOfTheMoney(): boolean {
         return !this.parsed.positionValue && this.isExpired;
     }
 }
